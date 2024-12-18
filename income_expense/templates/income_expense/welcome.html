@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Expense Tracker</h1>
+    </header>
+    <main>
+        <div class="links">
+            <a href="{% url 'login' %}" class="button">Login</a>
+            <a href="{% url 'register' %}" class="button">Register</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

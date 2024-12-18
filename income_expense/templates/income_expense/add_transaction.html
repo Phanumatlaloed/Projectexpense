@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Transaction</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ss.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Add a New Transaction</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form method="post" class="transaction-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button">Save Transaction</button>
+            </form>
+            <div class="back-link">
+                <a href="{% url 'index' %}" class="button secondary">Back to Dashboard</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

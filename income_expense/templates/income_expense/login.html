@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Login to Expense Tracker</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+            <div class="register-link">
+                <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Create Your Account</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form method="post" class="register-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button">Register</button>
+            </form>
+            <div class="login-link">
+                <p>Already have an account? <a href="{% url 'login' %}">Back to Login</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>
